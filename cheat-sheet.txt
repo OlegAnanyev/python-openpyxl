@@ -1,0 +1,22 @@
+#just fragments of code
+
+
+print (ws['A1'].value)
+print( "{A1}   {B1}   {C1}   {D1}   {E1}".format(A1=ws['A1'].value, B1=ws['B1'].value, C1=ws['C1'].value, D1=ws['D1'].value, E1=ws['E1'].value) )
+
+
+
+cell_range = ws['A1':'F1']
+print(cell_range)
+for val in cell_range:
+    print(val[0])
+
+
+
+for col in ws.iter_cols(min_row=1, max_row=2, max_col=NUMBER_OF_COLUMNS):
+    for cell in col:
+        print(cell.value)
+
+
+from openpyxl.utils import get_column_letter
+letter = get_column_letter(2) #получим букву столбца по его номеру        
