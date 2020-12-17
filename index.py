@@ -2,7 +2,6 @@ import os
 import time
 from openpyxl import load_workbook
 
-
 start = time.time() #засечём время работы скрипта
 
 ### ### ### ### ### ### ### ### ### ### ### ###
@@ -24,7 +23,7 @@ for col in range(ws.max_column, 0, -1):
 
 #########################################################################################################
 #заменим все значения столбца на указанное (кроме заголовка)
-COLUMN_TO_CHANGE = 1
+COLUMN_TO_CHANGE = 3
 NEW_VAL = 1234567890
 for c in range (2, ws.max_row+1):
     ws.cell(row=c, column=COLUMN_TO_CHANGE).value = NEW_VAL
@@ -34,5 +33,5 @@ for c in range (2, ws.max_row+1):
 wb.save(PATH_TO_SAVEFILE)
 print ("New file is saved: ", PATH_TO_SAVEFILE)
 
-elapsed = round (time.time() -start, 2)
+elapsed = round (time.time() - start, 2)
 print(elapsed, "seconds elapsed.")
