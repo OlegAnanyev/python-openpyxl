@@ -6,10 +6,10 @@ from openpyxl import load_workbook
 start = time.time() #засечём время работы скрипта
 
 ### ### ### ### ### ### ### ### ### ### ### ###
-PATH_TO_MEGAFILE = 'L:\\py-excel\\minifile.xlsx'
+PATH_TO_MEGAFILE = 'L:\\python-openpyxl\\minifile.xlsx'
 SHEET_NAME = 'TDSheet'
 NEEDED_COLUMNS = [2, 6, 29] #какие столбцы оставляем в файле
-PATH_TO_SAVEFILE = 'L:\\py-excel\\result.xlsx'
+PATH_TO_SAVEFILE = 'L:\\python-openpyxl\\result.xlsx'
 ### ### ### ### ### ### ### ### ### ### ### ###
 
 wb = load_workbook(PATH_TO_MEGAFILE)
@@ -17,9 +17,9 @@ ws = wb[SHEET_NAME]
 
 #########################################################################################################
 #в цикле удаляем ненужные столбцы от последнего к первому, чтобы не нарушить последовательность
-# for col in range(ws.max_column, 0, -1):
-#     if col not in NEEDED_COLUMNS:
-#         ws.delete_cols(col)
+for col in range(ws.max_column, 0, -1):
+    if col not in NEEDED_COLUMNS:
+        ws.delete_cols(col)
 #########################################################################################################
 
 #########################################################################################################
